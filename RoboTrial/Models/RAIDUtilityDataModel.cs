@@ -7,6 +7,7 @@ namespace RoboTrial.Models
 {
     public class RAIDUtilityDataModel
     {
-
+        public string CommandName { get; set; }
+        
     }
 }
