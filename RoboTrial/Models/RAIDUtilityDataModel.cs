@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,17 +8,18 @@ namespace RoboTrial.Models
 {
     public class RAIDUtility
     {
+        [Key]
         public int RAIDUtilityID { get; set; }
         public string Name { get; set; }
-        public List<RAIDCommand> VDCommand { get; set; }
-        public List<RAIDCommand> CtrlCommand { get; set; }
-        public List<int> VDCommandID { get; set; }
-        public List<int> CtrlCommandID { get; set; }
+        public virtual RAIDCommand VDCommand { get; set; }
+        public virtual ICollection<RAIDCommand> CtrlCommand { get; set; }
 
         public class RAIDCommand
         {
-            public int numberthing { get; set; }
-
+            [Key]
+            public int RAIDCommandID { get; set; }
+            public string CommandName { get; set; }
+            public string SyntaxString { get; set; }
         }
     }
 }
