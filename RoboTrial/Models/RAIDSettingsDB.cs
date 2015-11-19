@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace RoboTrial.Models
 {
-    public class UtilityDB : DbContext
+    public class RAIDSettingsDB : DbContext
     {
         public DbSet<RAIDUtility> RAIDUtility { get; set; }
     }
